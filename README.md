@@ -70,3 +70,8 @@ Ongoing upstream work on `oh-my-pi`, `openhuman`, `graphify` and `prime-agent` &
   <img src="https://github-readme-stats.vercel.app/api?username=Mustaqeem66&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&theme=github_dark&hide_title=true" height="150" alt="GitHub stats">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mustaqeem66&layout=compact&hide_border=true&theme=github_dark&langs_count=8" height="150" alt="Top languages">
 </p>
+
+<p align="center">
+  <a href="mailto:ageisnode@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
+  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+</p>
