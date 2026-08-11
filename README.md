@@ -6,6 +6,12 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/Merged%20upstream-4%20PRs-2EA043?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="4 merged PRs">
+  <img src="https://img.shields.io/badge/Public%20PRs-24-1F6FEB?style=for-the-badge&logo=git&logoColor=white&labelColor=0D1117" alt="24 public PRs">
+  <img src="https://img.shields.io/badge/Projects%20contributed-186k%20stars-8957E5?style=for-the-badge&logo=starship&logoColor=white&labelColor=0D1117" alt="186k combined stars">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white" alt="Rust">
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
@@ -13,6 +19,7 @@
   <img src="https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white" alt="Laravel">
   <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white" alt="Vue">
   <img src="https://img.shields.io/badge/Node.js-5FA04E?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/Bun-000000?style=flat-square&logo=bun&logoColor=white" alt="Bun">
 </p>
 
 ---
@@ -67,11 +74,5 @@ Ongoing upstream work on `oh-my-pi`, `openhuman`, `graphify` and `prime-agent` &
 ---
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Mustaqeem66&show_icons=true&hide_border=true&count_private=true&include_all_commits=true&theme=github_dark&hide_title=true" height="150" alt="GitHub stats">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Mustaqeem66&layout=compact&hide_border=true&theme=github_dark&langs_count=8" height="150" alt="Top languages">
-</p>
-
-<p align="center">
-  <a href="mailto:ageisnode@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Email"></a>
-  <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-HANDLE"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <sub>Open to collaboration on developer tooling and AI agent infrastructure.</sub>
 </p>
