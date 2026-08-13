@@ -11,7 +11,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/can1357/oh-my-pi/pulls?q=is%3Apr+author%3AMustaqeem66+is%3Amerged"><img src="https://img.shields.io/badge/Merged%20into%20oh--my--pi-5%20PRs-2EA043?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="5 merged PRs in oh-my-pi"></a>
+  <a href="https://github.com/can1357/oh-my-pi/graphs/contributors"><img src="https://img.shields.io/badge/Commits%20in%20oh--my--pi-8-2EA043?style=for-the-badge&logo=github&logoColor=white&labelColor=0D1117" alt="8 commits in oh-my-pi"></a>
+  <a href="https://github.com/can1357/oh-my-pi/pulls?q=is%3Apr+author%3AMustaqeem66+is%3Amerged"><img src="https://img.shields.io/badge/Merged%20PRs-5-2EA043?style=for-the-badge&logo=git&logoColor=white&labelColor=0D1117" alt="5 merged PRs in oh-my-pi"></a>
   <a href="https://github.com/can1357/oh-my-pi/pulls?q=is%3Apr+author%3AMustaqeem66+is%3Aopen"><img src="https://img.shields.io/badge/Open%20in%20review-4%20PRs-D29922?style=for-the-badge&logo=git&logoColor=white&labelColor=0D1117" alt="4 open PRs in oh-my-pi"></a>
   <a href="https://github.com/search?q=is%3Apr+author%3AMustaqeem66&type=pullrequests"><img src="https://img.shields.io/badge/Public%20PRs-24-1F6FEB?style=for-the-badge&logo=git&logoColor=white&labelColor=0D1117" alt="24 public PRs"></a>
   <a href="https://github.com/Mustaqeem66?tab=repositories"><img src="https://img.shields.io/badge/Projects%20contributed-186k%20stars-8957E5?style=for-the-badge&logo=starship&logoColor=white&labelColor=0D1117" alt="186k combined stars"></a>
@@ -32,15 +33,33 @@
 
 ## Merged upstream &mdash; [oh-my-pi](https://github.com/can1357/oh-my-pi) (23.7k&#9733;)
 
-Code shipped into production open source. All five PRs below are merged into `can1357/oh-my-pi@main`.
+**8 commits** on `can1357/oh-my-pi@main` across **5 merged pull requests**. Both numbers are real and measure different things: the [contributor graph](https://github.com/can1357/oh-my-pi/graphs/contributors) counts commits carrying my authorship, while #7853 and #7849 were landed by the maintainer as squashed merge commits authored by `can1357`, so their code is in `main` but does not appear in my commit count.
 
 | # | PR | Area | What it fixes | Merged |
 |---|---|---|---|---|
 | 1 | [#8213](https://github.com/can1357/oh-my-pi/pull/8213) &mdash; `fix: OSC 133 command start` | TUI / terminal | `133;B` latches a sticky `.input` cursor semantic in Ghostty-derived terminals, so every later painted cell is tagged as prompt input and click-to-move injects arrow keys into the pty. Emits a balanced `133;C` + `133;D;0` inside the same render, clearing the state without regrouping later output (#8030, #6115). +45 / &minus;7 across 2 files | 2026-08-11 |
-| 2 | [#7853](https://github.com/can1357/oh-my-pi/pull/7853) &mdash; `fix(extensions): roll back providers after load failure` | Extension loader | A partially registered extension could leave the provider registry inconsistent; providers are now rolled back on load failure | 2026-08-07 |
-| 3 | [#7849](https://github.com/can1357/oh-my-pi/pull/7849) &mdash; `fix(catalog): enrich Alibaba Token Plan discovered model limits` | Model catalog | Discovered model limits for the Alibaba Token Plan were incomplete in the catalog | 2026-08-07 |
-| 4 | [#7536](https://github.com/can1357/oh-my-pi/pull/7536) &mdash; `perf(fuzzy-find): retain only the bounded top-K scored matches` | Fuzzy find | Bounded fuzzy-find to the top-K scored matches instead of retaining the full candidate set | 2026-08-05 |
-| 5 | [#7515](https://github.com/can1357/oh-my-pi/pull/7515) &mdash; `feat(browser): auto-detect Ungoogled Chromium on Linux` | Browser tool | Ungoogled Chromium installs on Linux were not discovered by the browser tool | 2026-08-05 |
+| 2 | [#7853](https://github.com/can1357/oh-my-pi/pull/7853) &mdash; `fix(extensions): roll back providers after load failure` | Extension loader | `registerProvider()` wrote straight into the shared `ExtensionRuntime.pendingProviderRegistrations`, so an extension that threw during init was rejected while its provider survived and kept influencing model routing. Checkpoints the queue and restores it on throw, preserving earlier extensions' entries (#7472). 4 regression tests. +138 / &minus;4 | 2026-08-07 |
+| 3 | [#7849](https://github.com/can1357/oh-my-pi/pull/7849) &mdash; `fix(catalog): enrich Alibaba Token Plan discovered model limits` | Model catalog | The `/models` endpoint omits `context_length`, so dynamically discovered models showed `?` in the selector. Adds curated `contextWindow`/`maxTokens` for known discovered models while unknown future models stay visible with `null` rather than guessed limits (#7486). +89 / &minus;4 | 2026-08-07 |
+| 4 | [#7536](https://github.com/can1357/oh-my-pi/pull/7536) &mdash; `perf(fuzzy-find): retain only the bounded top-K scored matches` | Fuzzy find | Allocated a scored match for every hit and full-sorted before truncating to `maxResults` (100). Now scores into a bounded worst-first `BinaryHeap` of at most `maxResults`, keeping the exact `totalMatches` contract; `path_depth` computed once per retained candidate instead of inside the comparator | 2026-08-05 |
+| 5 | [#7515](https://github.com/can1357/oh-my-pi/pull/7515) &mdash; `feat(browser): auto-detect Ungoogled Chromium on Linux` | Browser tool | Ungoogled Chromium executable names, absolute paths, and the system-wide and per-user Flatpak shims for `io.github.ungoogled_software.ungoogled_chromium` are appended to `systemChromiumCandidates()`, so a stock Chrome install still wins and `PUPPETEER_EXECUTABLE_PATH` is unaffected (#7509) | 2026-08-05 |
+
+<details>
+<summary><b>The 8 commits, individually</b></summary>
+
+| Commit | Message | PR | Date |
+|---|---|---|---|
+| [`bf99f9c`](https://github.com/can1357/oh-my-pi/commit/bf99f9ce5bd829cd7cc31b7b967549b9e9d9b65c) | `test(tui): lock the paired OSC 133 command zone instead of its absence` | #8213 | 2026-08-11 |
+| [`d5e2bb9`](https://github.com/can1357/oh-my-pi/commit/d5e2bb9299ac58fd78f39706257f3710758b4610) | `fix(tui): close the OSC 133 prompt zone so terminals clear input state` | #8213 | 2026-08-11 |
+| [`f4811ce`](https://github.com/can1357/oh-my-pi/commit/f4811ce7c4b986a7df360e6b855a611534e3f82f) | `Merge pull request #4 from can1357/main` (fork sync) | &mdash; | 2026-08-09 |
+| [`60187c9`](https://github.com/can1357/oh-my-pi/commit/60187c9ba96bda40f5695889e11c5dfe7fb74166) | `refactor(fuzzy-find): release the heap borrow before evicting` | #7536 | 2026-08-03 |
+| [`2cf0a47`](https://github.com/can1357/oh-my-pi/commit/2cf0a47d6a835740308610972aba022f8a869324) | `perf(fuzzy-find): retain only the bounded top-K scored matches` | #7536 | 2026-08-03 |
+| [`cc66b1d`](https://github.com/can1357/oh-my-pi/commit/cc66b1d74274747b2c906eb5569e3fc22e4a8f96) | `feat(browser): detect Ungoogled Chromium on Linux` | #7515 | 2026-08-03 |
+| [`0124728`](https://github.com/can1357/oh-my-pi/commit/0124728118f8f3927a1c99485dafaffe36da79a7) | `Merge pull request #2 from can1357/main` (fork sync) | &mdash; | 2026-08-03 |
+| [`386f05d`](https://github.com/can1357/oh-my-pi/commit/386f05d241051e3c131b042511084cb5246bae39) | `Merge pull request #1 from can1357/main` (fork sync) | &mdash; | 2026-08-03 |
+
+Five carry code; three are fork-sync merges. The squashed merge commits for #7853 ([`22a3393`](https://github.com/can1357/oh-my-pi/commit/22a3393f4db14019f15f492105d2453427b72125)) and #7849 are authored by the maintainer and so fall outside this list.
+
+</details>
 
 ### Open in review &mdash; same repo
 
